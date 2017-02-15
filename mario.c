@@ -29,15 +29,8 @@ int PrintPyramid(int height)
         for (int j = 0; j < k2 - 1; j++)
             printf(" ");   
         for (int j = 0; j < k1; j++)
-            printf("#");  
-            
-        printf("  ");   //dodatkova stupenka
-        
-            
-        for (int j = 0; j < k1; j++)
-            printf("#");    
-            
-        printf("\n");   //dodatkova stupenka 
+            printf("#");   
+        printf("#\n");   //dodatkova stupenka 
     }
     return 0;
 }
