@@ -1,0 +1,12 @@
+1.  stdint.h - for making integer variables of custom sizes
+2.  They are good for things like bitmap headers
+3.  BYTE = 8 bits = 1 byte, DWORD= 32 bits = 4 bytes, LONG = signed 32 bits = 4 bytes, WORD = 16 bits = 2 bytes
+4.  file formats
+5.  in the total number of bytes
+6.  the bitmap is a top-down with the origin at the upper left corner
+7.  biBitCount
+8.  if it can not find the file
+9.  we want to read 1 element, to read a struct (so we only need 1 struct)
+10. padding =  (4 - (3 * 3) % 4) % 4 = 3
+11. fseek(inptr, padding, SEEK_CUR) - skip over padding, if any
+12. a constant
