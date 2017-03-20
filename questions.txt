@@ -1,0 +1,21 @@
+0.  pneumonoultramicroscopicsilicovolcanoconiosis is the largest english world
+1.  by way of getrusage, we’ll be "benchmarking" (timing the execution of) our implementations of check, load, size, and unload
+2.  16 members are in a variable of type struct rusage
+3.  We pass before and after by reference (instead of by value) to the function "calculate"
+    because passing large structs by value is slow and takes up a lot of memory. 
+    If you're passing or returning structs by value, copies of those structs will get placed on the stack,
+    potentially causing stack overflow.
+4.  fgetc gets the next character (an unsigned char) from fp and advances the position indicator in fp until the end of
+    the file (EOF) is reached. 
+    As each character is received, it is put through an if(if)-elseif-elseif logical sequence. 
+    The sequence are: 
+        - If the character is an alphabetical character or an apostrophe that is not at index 0 of the 
+        word, the character is appended to the word array. 
+        - Else if the character is numerical, the word is ignored and we skip ahead to the 
+        next word (which is found after a space). 3) Else if we hit a space or 
+        punctuation, we must have found a whole word so we terminate the word by adding \0 to the word array
+5.  There is speed and safety.
+    The main difference from scanf is that the function will stop reading at the moment the buffer runs out.
+    The speed is due to the fact that the scanf function must parse the format string at the time of execution,
+    while fgets simply read the string.
+6.  const - because we want to prevent changes to a read word and the dictionary we are using
