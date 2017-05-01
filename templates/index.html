@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <td>Symbol</td>
+            <td>Name</td>
+            <td>Count</td>
+            <td>Price (now)</td>
+            <td>Total</td>
+        </tr>
+    </thead>
+    {% for stock in stocks %}
+    <tr>
+        <td>{{stock.symbol}}</td>
+        <td>{{stock.name}} ( old price was {{stock.price_old}})</td>
+        <td>{{stock.count}}</td>
+        <td>{{stock.price}}</td>
+        <td>{{stock.total}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<p align="right">CASH: <b>{{ cash }} </b>.</p>
+
+<p align="right"> <b>{{ total_all }} </b> .</p>
+{% endblock %}

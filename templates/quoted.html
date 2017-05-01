@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+
+{% if quote %}
+<p>  At your request " <b>{{quote['symbol']}}</b> " for to buy stocks are found: </p>
+<table>
+    <tr>
+        <td> Name: </td>
+        <td><b> {{quote['name']}} </b></td>
+    </tr>
+    <tr>
+        <td> Price: </td>
+        <td> <b> {{quote['price']}} </b></td>
+    </tr>
+</table>
+<p>Go to menu "Buy" in the top of your window for to by it!</p>
+
+{% endif %}
+
+{% endblock %}
